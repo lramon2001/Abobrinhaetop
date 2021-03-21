@@ -288,18 +288,21 @@ public void CarregaTabela(){
             }
         });
 
+        c_nome.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         c_nome.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 c_nomeActionPerformed(evt);
             }
         });
 
+        c_quantidade.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         c_quantidade.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 c_quantidadeActionPerformed(evt);
             }
         });
 
+        c_preco.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         c_preco.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 c_precoActionPerformed(evt);
@@ -371,7 +374,7 @@ public void CarregaTabela(){
         jPanel8.setBackground(new java.awt.Color(255, 255, 255));
         jPanel8.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Lista de Compras", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 3, 12), new java.awt.Color(0, 0, 0))); // NOI18N
 
-        Tabela.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
+        Tabela.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         Tabela.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -470,12 +473,17 @@ public void CarregaTabela(){
         jLabel8.setForeground(new java.awt.Color(0, 0, 0));
         jLabel8.setText("Valor total:");
 
+        c_numero.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        c_numero.setForeground(new java.awt.Color(0, 0, 0));
         c_numero.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 c_numeroActionPerformed(evt);
             }
         });
 
+        c_valor.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        c_valor.setForeground(new java.awt.Color(0, 0, 0));
+        c_valor.setDisabledTextColor(new java.awt.Color(0, 0, 0));
         c_valor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 c_valorActionPerformed(evt);
