@@ -17,6 +17,8 @@ public class View extends javax.swing.JFrame {
      
     ArrayList<Carrinho> ListaDeCompras;
     String situacao;
+    int contador=0;
+    double valorTotal;
 public void CarregaTabela(){
              
              
@@ -30,17 +32,18 @@ public void CarregaTabela(){
                                             ListaDeCompras.get(i).getPreco(),
                                             };
                  modelo.addRow(linha);
-
              }
     Tabela.getColumnModel().getColumn(0).setPreferredWidth(50);
     Tabela.getColumnModel().getColumn(1).setPreferredWidth(50);
     Tabela.getColumnModel().getColumn(2).setPreferredWidth(50);
     Tabela.setModel(modelo);
+    
         
     }
     /**
      * Creates new form View
      */
+      
   public void Interage(){
         switch (situacao){
             case "Navegacao":
@@ -50,6 +53,8 @@ public void CarregaTabela(){
                 c_nome.setEnabled(false);
                 c_quantidade.setEnabled(false);
                 c_preco.setEnabled(false);
+                c_numero.setEditable(false);
+                c_valor.setEnabled(false);
                 b_novo.setEnabled(true);
                 b_editar.setEnabled(false);
                 b_excluir.setEnabled(false);
@@ -125,6 +130,7 @@ public void CarregaTabela(){
 
         jPanel6 = new javax.swing.JPanel();
         jButton6 = new javax.swing.JButton();
+        jLabel9 = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
@@ -140,6 +146,9 @@ public void CarregaTabela(){
         c_nome = new javax.swing.JTextField();
         c_quantidade = new javax.swing.JTextField();
         c_preco = new javax.swing.JTextField();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
         jPanel8 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         Tabela = new javax.swing.JTable();
@@ -176,6 +185,8 @@ public void CarregaTabela(){
                 jButton6ActionPerformed(evt);
             }
         });
+
+        jLabel9.setText("jLabel9");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(51, 51, 51));
@@ -290,6 +301,12 @@ public void CarregaTabela(){
             }
         });
 
+        jLabel11.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel11.setText("R$");
+
+        jLabel12.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel12.setText("un");
+
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
         jPanel7Layout.setHorizontalGroup(
@@ -300,7 +317,7 @@ public void CarregaTabela(){
                     .addGroup(jPanel7Layout.createSequentialGroup()
                         .addComponent(b_salvar, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(b_cancelar, javax.swing.GroupLayout.DEFAULT_SIZE, 105, Short.MAX_VALUE))
+                        .addComponent(b_cancelar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel7Layout.createSequentialGroup()
                         .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel2)
@@ -309,8 +326,16 @@ public void CarregaTabela(){
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(c_preco)
-                            .addComponent(c_quantidade)
-                            .addComponent(c_nome))))
+                            .addComponent(c_nome)
+                            .addGroup(jPanel7Layout.createSequentialGroup()
+                                .addComponent(c_quantidade, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel10)
+                            .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel11, javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(jLabel12)))))
                 .addContainerGap())
         );
         jPanel7Layout.setVerticalGroup(
@@ -323,11 +348,14 @@ public void CarregaTabela(){
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(c_quantidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(c_quantidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel10)
+                    .addComponent(jLabel12))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(c_preco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(c_preco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel11))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(b_salvar)
@@ -344,7 +372,7 @@ public void CarregaTabela(){
 
             },
             new String [] {
-                "Produto", "Quantidade", "Preço"
+                "Produto", "Quantidade (un)", "Preço (R$)"
             }
         ) {
             Class[] types = new Class [] {
@@ -528,6 +556,9 @@ public void CarregaTabela(){
     if(situacao.equals("Novo")){
     Carrinho c = new Carrinho(c_nome.getText(),c_quantidade.getText(),c_preco.getText());
     ListaDeCompras.add(c);
+    
+    contador++;
+    
     }
     else if(situacao.equals("Editar")){
         int index = Tabela.getSelectedRow();
@@ -545,7 +576,9 @@ public void CarregaTabela(){
      c_nome.setText("");
         c_quantidade.setText("");
         c_preco.setText("");
-  
+   c_numero.setText("");
+        c_numero.setText(String.valueOf(contador));
+      
     }                                                       
 
                                                   
@@ -583,17 +616,20 @@ public void CarregaTabela(){
             ListaDeCompras.remove(index);
         }
         CarregaTabela();
+        c_numero.setText("");
+        contador--;
+        c_numero.setText(String.valueOf(contador));
         situacao="Navegacao";
         Interage();
         
     }//GEN-LAST:event_b_excluirActionPerformed
 
     private void c_valorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_c_valorActionPerformed
-        // TODO add your handling code here:
+       
     }//GEN-LAST:event_c_valorActionPerformed
 
     private void c_numeroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_c_numeroActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_c_numeroActionPerformed
 
     private void c_precoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_c_precoActionPerformed
@@ -668,6 +704,9 @@ public void CarregaTabela(){
     private javax.swing.JTextField c_valor;
     private javax.swing.JButton jButton6;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -675,6 +714,7 @@ public void CarregaTabela(){
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel5;
