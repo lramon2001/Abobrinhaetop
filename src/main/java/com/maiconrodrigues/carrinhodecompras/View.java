@@ -557,7 +557,9 @@ public void CarregaTabela(){
     Carrinho c = new Carrinho(c_nome.getText(),c_quantidade.getText(),c_preco.getText());
    
    int quantidade= Integer.parseInt(c.getQuantiade());
+   double preco=Double.parseDouble(c.getPreco())*quantidade;
    contador+=quantidade;
+   valorTotal+=preco;
     ListaDeCompras.add(c);
     
     
@@ -566,16 +568,17 @@ public void CarregaTabela(){
     else if(situacao.equals("Editar")){
         int index = Tabela.getSelectedRow();
         int oldValue=Integer.parseInt(ListaDeCompras.get(index).getQuantiade());
+        double oldPrice=Double.valueOf(ListaDeCompras.get(index).getPreco())*Integer.parseInt(ListaDeCompras.get(index).getQuantiade());
         contador-=oldValue;
+        valorTotal-=oldPrice;
+        
         ListaDeCompras.get(index).setNome(c_nome.getText());
         ListaDeCompras.get(index).setQuantiade(c_quantidade.getText());
        ListaDeCompras.get(index).setPreco(c_preco.getText());
         int newValue=Integer.parseInt(ListaDeCompras.get(index).getQuantiade());
+        double newPrice=Double.valueOf(ListaDeCompras.get(index).getPreco())*Integer.parseInt(ListaDeCompras.get(index).getQuantiade());
         contador+=newValue;
-       
-       
-      
-        
+        valorTotal+=newPrice;
     }
      
      CarregaTabela();
@@ -588,7 +591,9 @@ public void CarregaTabela(){
         c_preco.setText("");
    c_numero.setText("");
    c_numero.setText(String.valueOf(contador));
-       
+   c_valor.setText("");
+   c_valor.setText(String.valueOf(valorTotal));
+   
       
     }                                                       
 
@@ -624,14 +629,22 @@ public void CarregaTabela(){
     private void b_excluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_excluirActionPerformed
         int index = Tabela.getSelectedRow();
         if(index>=0 && index<ListaDeCompras.size()){
-            ListaDeCompras.remove(index);
+            
+                    int removeValue=Integer.parseInt(ListaDeCompras.get(index).getQuantiade());
+                    double removePrice=Double.parseDouble(ListaDeCompras.get(index).getPreco())* Integer.parseInt(ListaDeCompras.get(index).getQuantiade());
+                    contador-=removeValue;
+                    valorTotal-=removePrice;
+                    ListaDeCompras.remove(index);
         }
         CarregaTabela();
-        c_numero.setText("");
+        
         
         situacao="Navegacao";
         Interage();
-        
+         c_numero.setText("");
+         c_numero.setText(String.valueOf(contador));
+         c_valor.setText("");
+         c_valor.setText(String.valueOf(valorTotal));
     }//GEN-LAST:event_b_excluirActionPerformed
 
     private void c_valorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_c_valorActionPerformed
