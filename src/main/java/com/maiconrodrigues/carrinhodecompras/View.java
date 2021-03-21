@@ -565,9 +565,13 @@ public void CarregaTabela(){
     }
     else if(situacao.equals("Editar")){
         int index = Tabela.getSelectedRow();
+        int oldValue=Integer.parseInt(ListaDeCompras.get(index).getQuantiade());
+        contador-=oldValue;
         ListaDeCompras.get(index).setNome(c_nome.getText());
         ListaDeCompras.get(index).setQuantiade(c_quantidade.getText());
        ListaDeCompras.get(index).setPreco(c_preco.getText());
+        int newValue=Integer.parseInt(ListaDeCompras.get(index).getQuantiade());
+        contador+=newValue;
        
        
       
