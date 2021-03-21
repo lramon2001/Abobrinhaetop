@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+<Form version="1.5" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
   <NonVisualComponents>
     <Container class="javax.swing.JPanel" name="jPanel6">
       <Properties>
@@ -242,9 +242,6 @@
             </Property>
             <Property name="toolTipText" type="java.lang.String" value="Adicionar Produto "/>
           </Properties>
-          <AccessibilityProperties>
-            <Property name="AccessibleContext.accessibleName" type="java.lang.String" value="Adicionar Produto"/>
-          </AccessibilityProperties>
 
           <Layout>
             <DimensionLayout dim="0">

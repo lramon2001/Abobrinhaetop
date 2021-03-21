@@ -20,13 +20,12 @@ public class View extends javax.swing.JFrame {
 public void CarregaTabela(){
              
              
-             DefaultTableModel modelo = new DefaultTableModel(new Object[]{"Nome","CPF","Data_Nasc","Sexo","Cargo"},0);
+             DefaultTableModel modelo = new DefaultTableModel(new Object[]{"Produto","Quantidade","Preço"},0);
                           
              
              for(int i=0;i<ListaDeCompras.size();i++)
              {
                  Object linha[]= new Object[]{ListaDeCompras.get(i).getNome(),
-                                            ListaDeCompras.get(i).getNome(),
                                             ListaDeCompras.get(i).getQuantiade(),
                                             ListaDeCompras.get(i).getPreco(),
                                             };
@@ -37,7 +36,6 @@ public void CarregaTabela(){
     Tabela.getColumnModel().getColumn(1).setPreferredWidth(50);
     Tabela.getColumnModel().getColumn(2).setPreferredWidth(50);
     Tabela.getColumnModel().getColumn(3).setPreferredWidth(50);
-    Tabela.getColumnModel().getColumn(4).setPreferredWidth(50);
     Tabela.setModel(modelo);
         
     }
@@ -47,8 +45,9 @@ public void CarregaTabela(){
   public void Interage(){
         switch (situacao){
             case "Navegacao":
+                 b_salvar.setEnabled(false);
+                 b_cancelar.setEnabled(false);
                  b_novo.setEnabled(false);
-                b_cancelar.setEnabled(false);
                 c_nome.setEnabled(false);
                 c_quantidade.setEnabled(false);
                 c_preco.setEnabled(false);
@@ -109,6 +108,10 @@ public void CarregaTabela(){
     }
     public View() {
         initComponents();
+        ListaDeCompras= new ArrayList();
+        situacao= "Navegacao";
+        Interage();
+   
     }
 
     /**
@@ -509,8 +512,6 @@ public void CarregaTabela(){
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        jPanel7.getAccessibleContext().setAccessibleName("Adicionar Produto");
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -524,10 +525,6 @@ public void CarregaTabela(){
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void TabelaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TabelaMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_TabelaMouseClicked
 
     private void b_salvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_salvarActionPerformed
             
@@ -552,24 +549,11 @@ public void CarregaTabela(){
      c_nome.setText("");
         c_quantidade.setText("");
         c_preco.setText("");
-       
-        
-     
-      
+  
     }                                                       
 
-    private void Table_funcionariosMouseClicked(java.awt.event.MouseEvent evt) {                                                
-        int index = Tabela.getSelectedRow();
-        if (index>=0 && index<ListaDeCompras.size())
-        {
-            Produto P = ListaDeCompras.get(index);
-            c_nome.setText(P.getNome());
-            c_quantidade.setText(Integer.parseInt(P.getQuantiade()));
-            c_preco.setText(P.getPreco());
-            
-            situacao="Clique";
-            Interage();    
-    }                                               
+                                                  
+   {                                            
     }//GEN-LAST:event_b_salvarActionPerformed
 
     private void c_quantidadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_c_quantidadeActionPerformed
@@ -627,6 +611,14 @@ public void CarregaTabela(){
         situacao="Navegacao";
         Interage();
     }//GEN-LAST:event_b_cancelarActionPerformed
+
+    private void TabelaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TabelaMouseClicked
+        int index = Tabela.getSelectedRow();
+        if(index>=0 && index<ListaDeCompras.size()){
+            Produto P= ListaDeCompras.get(index);
+            c_nome.setText(P.getNome());
+        }
+    }//GEN-LAST:event_TabelaMouseClicked
 
     /**
      * @param args the command line arguments
@@ -686,8 +678,6 @@ public void CarregaTabela(){
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
