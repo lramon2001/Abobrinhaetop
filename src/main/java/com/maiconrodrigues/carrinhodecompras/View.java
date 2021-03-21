@@ -15,7 +15,7 @@ import javax.swing.table.DefaultTableModel;
  */
 public class View extends javax.swing.JFrame {
      
-    ArrayList<Produto> ListaDeCompras;
+    ArrayList<Carrinho> ListaDeCompras;
     String situacao;
 public void CarregaTabela(){
              
@@ -35,7 +35,6 @@ public void CarregaTabela(){
     Tabela.getColumnModel().getColumn(0).setPreferredWidth(50);
     Tabela.getColumnModel().getColumn(1).setPreferredWidth(50);
     Tabela.getColumnModel().getColumn(2).setPreferredWidth(50);
-    Tabela.getColumnModel().getColumn(3).setPreferredWidth(50);
     Tabela.setModel(modelo);
         
     }
@@ -108,6 +107,7 @@ public void CarregaTabela(){
     }
     public View() {
         initComponents();
+        setLocationRelativeTo(null);
         ListaDeCompras= new ArrayList();
         situacao= "Navegacao";
         Interage();
@@ -341,10 +341,7 @@ public void CarregaTabela(){
         Tabela.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
         Tabela.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null}
+
             },
             new String [] {
                 "Produto", "Quantidade", "Preço"
@@ -529,15 +526,14 @@ public void CarregaTabela(){
     private void b_salvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_salvarActionPerformed
             
     if(situacao.equals("Novo")){
-    Produto P= new Produto(c_nome.getText(),Double.parseDouble(c_preco.getText()),Integer.parseInt(c_quantidade.getText()));
-     
-     ListaDeCompras.add(P);
+    Carrinho c = new Carrinho(c_nome.getText(),c_quantidade.getText(),c_preco.getText());
+    ListaDeCompras.add(c);
     }
     else if(situacao.equals("Editar")){
         int index = Tabela.getSelectedRow();
         ListaDeCompras.get(index).setNome(c_nome.getText());
-        ListaDeCompras.get(index).setQuantiade(Integer.parseInt(c_quantidade.getText()));
-       ListaDeCompras.get(index).setPreco(Double.parseDouble(c_preco.getText()));
+        ListaDeCompras.get(index).setQuantiade(c_quantidade.getText());
+       ListaDeCompras.get(index).setPreco(c_preco.getText());
         
     }
      
@@ -615,9 +611,14 @@ public void CarregaTabela(){
     private void TabelaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TabelaMouseClicked
         int index = Tabela.getSelectedRow();
         if(index>=0 && index<ListaDeCompras.size()){
-            Produto P= ListaDeCompras.get(index);
-            c_nome.setText(P.getNome());
+            Carrinho C= ListaDeCompras.get(index);
+            c_nome.setText(C.getNome());
+            c_quantidade.setText(String.valueOf(C.getQuantiade()));
+            c_preco.setText(String.valueOf(C.getPreco()));
+            situacao="Clique";
+            Interage();
         }
+        
     }//GEN-LAST:event_TabelaMouseClicked
 
     /**
@@ -648,10 +649,8 @@ public void CarregaTabela(){
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new View().setVisible(true);
-            }
+        java.awt.EventQueue.invokeLater(() -> {
+            new View().setVisible(true);
         });
     }
 

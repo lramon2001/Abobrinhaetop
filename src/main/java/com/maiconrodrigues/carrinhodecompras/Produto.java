@@ -11,13 +11,13 @@ package com.maiconrodrigues.carrinhodecompras;
  */
 public class Produto {
     private String nome;
-    private double preco;
-    private int quantiade;
+    private String preco;
+    private String quantiade;
 
     public Produto() {
     }
 
-    public Produto(String nome, double preco, int quantiade) {
+    public Produto(String nome, String preco, String quantiade) {
         this.nome = nome;
         this.preco = preco;
         this.quantiade = quantiade;
@@ -31,19 +31,19 @@ public class Produto {
         this.nome = nome;
     }
 
-    public double getPreco() {
+    public String getPreco() {
         return preco;
     }
 
-    public void setPreco(double preco) {
+    public void setPreco(String preco) {
         this.preco = preco;
     }
 
-    public int getQuantiade() {
+    public String getQuantiade() {
         return quantiade;
     }
 
-    public void setQuantiade(int quantiade) {
+    public void setQuantiade(String quantiade) {
         this.quantiade = quantiade;
     }
     
