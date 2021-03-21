@@ -134,6 +134,7 @@ public void CarregaTabela(){
         jPanel5 = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
@@ -160,6 +161,8 @@ public void CarregaTabela(){
         jLabel8 = new javax.swing.JLabel();
         c_numero = new javax.swing.JTextField();
         c_valor = new javax.swing.JTextField();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
 
         jPanel6.setBackground(new java.awt.Color(255, 69, 0));
         jPanel6.setForeground(new java.awt.Color(255, 69, 0));
@@ -194,9 +197,13 @@ public void CarregaTabela(){
         jPanel5.setBackground(new java.awt.Color(255, 255, 255));
         jPanel5.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
 
-        jPanel1.setBackground(new java.awt.Color(255, 69, 0));
+        jPanel1.setBackground(new java.awt.Color(0, 204, 0));
 
         jLabel6.setIcon(new javax.swing.ImageIcon("C:\\Users\\Lucas\\Downloads\\carrinho.png")); // NOI18N
+
+        jLabel15.setFont(new java.awt.Font("Segoe UI", 0, 48)); // NOI18N
+        jLabel15.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel15.setText("EconomizzE");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -205,17 +212,22 @@ public void CarregaTabela(){
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel6)
+                .addGap(118, 118, 118)
+                .addComponent(jLabel15)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel6)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(19, 19, 19))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(jLabel15, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
-        jPanel2.setBackground(new java.awt.Color(255, 69, 0));
+        jPanel2.setBackground(new java.awt.Color(0, 204, 0));
 
         jLabel4.setBackground(new java.awt.Color(0, 0, 0));
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -261,7 +273,7 @@ public void CarregaTabela(){
         jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("Preço:");
 
-        b_salvar.setBackground(new java.awt.Color(255, 140, 0));
+        b_salvar.setBackground(new java.awt.Color(0, 140, 0));
         b_salvar.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         b_salvar.setForeground(new java.awt.Color(255, 255, 255));
         b_salvar.setText("Adicionar");
@@ -272,7 +284,7 @@ public void CarregaTabela(){
             }
         });
 
-        b_cancelar.setBackground(new java.awt.Color(255, 140, 0));
+        b_cancelar.setBackground(new java.awt.Color(0, 140, 0));
         b_cancelar.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         b_cancelar.setForeground(new java.awt.Color(255, 255, 255));
         b_cancelar.setText("Cancelar");
@@ -329,7 +341,7 @@ public void CarregaTabela(){
                             .addComponent(c_nome)
                             .addGroup(jPanel7Layout.createSequentialGroup()
                                 .addComponent(c_quantidade, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, Short.MAX_VALUE)))
+                                .addGap(0, 7, Short.MAX_VALUE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel10)
@@ -390,7 +402,7 @@ public void CarregaTabela(){
         });
         jScrollPane1.setViewportView(Tabela);
 
-        b_novo.setBackground(new java.awt.Color(255, 140, 0));
+        b_novo.setBackground(new java.awt.Color(0, 140, 0));
         b_novo.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         b_novo.setForeground(new java.awt.Color(255, 255, 255));
         b_novo.setText("Novo");
@@ -401,7 +413,7 @@ public void CarregaTabela(){
             }
         });
 
-        b_editar.setBackground(new java.awt.Color(255, 140, 0));
+        b_editar.setBackground(new java.awt.Color(0, 140, 0));
         b_editar.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         b_editar.setForeground(new java.awt.Color(255, 255, 255));
         b_editar.setText("Editar");
@@ -412,7 +424,7 @@ public void CarregaTabela(){
             }
         });
 
-        b_excluir.setBackground(new java.awt.Color(255, 140, 0));
+        b_excluir.setBackground(new java.awt.Color(0, 140, 0));
         b_excluir.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         b_excluir.setForeground(new java.awt.Color(255, 255, 255));
         b_excluir.setText("Excluir");
@@ -477,6 +489,12 @@ public void CarregaTabela(){
             }
         });
 
+        jLabel13.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel13.setText("un");
+
+        jLabel14.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel14.setText("R$");
+
         javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
         jPanel9.setLayout(jPanel9Layout);
         jPanel9Layout.setHorizontalGroup(
@@ -487,10 +505,14 @@ public void CarregaTabela(){
                     .addComponent(jLabel7)
                     .addComponent(jLabel8))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(c_numero)
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(c_numero, javax.swing.GroupLayout.DEFAULT_SIZE, 121, Short.MAX_VALUE)
                     .addComponent(c_valor))
-                .addContainerGap())
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel13)
+                    .addComponent(jLabel14))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel9Layout.setVerticalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -498,11 +520,13 @@ public void CarregaTabela(){
                 .addContainerGap()
                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
-                    .addComponent(c_numero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(c_numero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel13))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8)
-                    .addComponent(c_valor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(c_valor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel14))
                 .addContainerGap(50, Short.MAX_VALUE))
         );
 
@@ -525,7 +549,7 @@ public void CarregaTabela(){
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(24, 24, 24)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel5Layout.createSequentialGroup()
@@ -730,6 +754,9 @@ public void CarregaTabela(){
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
