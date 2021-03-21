@@ -555,9 +555,12 @@ public void CarregaTabela(){
             
     if(situacao.equals("Novo")){
     Carrinho c = new Carrinho(c_nome.getText(),c_quantidade.getText(),c_preco.getText());
+   
+   int quantidade= Integer.parseInt(c.getQuantiade());
+   contador+=quantidade;
     ListaDeCompras.add(c);
     
-    contador++;
+    
     
     }
     else if(situacao.equals("Editar")){
@@ -565,6 +568,9 @@ public void CarregaTabela(){
         ListaDeCompras.get(index).setNome(c_nome.getText());
         ListaDeCompras.get(index).setQuantiade(c_quantidade.getText());
        ListaDeCompras.get(index).setPreco(c_preco.getText());
+       
+       
+      
         
     }
      
@@ -577,7 +583,8 @@ public void CarregaTabela(){
         c_quantidade.setText("");
         c_preco.setText("");
    c_numero.setText("");
-        c_numero.setText(String.valueOf(contador));
+   c_numero.setText(String.valueOf(contador));
+       
       
     }                                                       
 
@@ -617,8 +624,7 @@ public void CarregaTabela(){
         }
         CarregaTabela();
         c_numero.setText("");
-        contador--;
-        c_numero.setText(String.valueOf(contador));
+        
         situacao="Navegacao";
         Interage();
         
