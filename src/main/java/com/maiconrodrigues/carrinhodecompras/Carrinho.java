@@ -9,7 +9,7 @@ import java.util.ArrayList;
 
 /**
  *
- * @author Lucas
+ * @author Maicon
  */
 public class Carrinho {
     private String nome;
