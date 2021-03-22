@@ -13,11 +13,10 @@ import java.util.ArrayList;
  */
 public class Carrinho {
     private String nome;
-   
     private String quantiade;
      private String preco;
     
-    private ArrayList<Produto>ListaDeCompras;
+  
 
     public Carrinho() {
     }
@@ -28,13 +27,7 @@ public class Carrinho {
         this.preco = preco;
     }
 
-    public Carrinho(String nome, String quantiade, String preco, ArrayList<Produto> ListaDeCompras) {
-        this.nome = nome;
-        this.quantiade = quantiade;
-        this.preco = preco;
-        this.ListaDeCompras = ListaDeCompras;
-    }
-
+ 
     /**
      * @return the nome
      */
@@ -80,16 +73,14 @@ public class Carrinho {
     /**
      * @return the ListaDeCompras
      */
-    public ArrayList<Produto> getListaDeCompras() {
-        return ListaDeCompras;
-    }
+   
 
     /**
      * @param ListaDeCompras the ListaDeCompras to set
      */
-    public void setListaDeCompras(ArrayList<Produto> ListaDeCompras) {
+    /*public void setListaDeCompras(ArrayList<Produto> ListaDeCompras) {
         this.ListaDeCompras = ListaDeCompras;
-    }
+    }*/
     
     
     
