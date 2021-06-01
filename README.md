@@ -39,4 +39,4 @@
 > **Consulte [Mudanças de commit](https://github.com/lramon2001/CarrinhoDeCompras/commits/view) para obter detalhes.**
 
 ## License / Licença
-[MIT License](https://github.com/lramon2001/PrimeiroProjetoJava/blob/master/LICENSE) © [lramon](https://github.com/lramon2001)
+[MIT License](https://github.com/lramon2001/CarrinhoDeCompras/blob/view/LICENSE.txt) © [lramon](https://github.com/lramon2001)
