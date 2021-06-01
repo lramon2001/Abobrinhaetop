@@ -34,9 +34,9 @@
 > **Esse projeto segue o modelo de [release](https://github.com/lramon2001/CarrinhoDeCompras/releases/tag/Economizzev1.0) para versionamento.**
 
 ## History / História
-- See [Commit changes] for details.
+- See [Commit changes](https://github.com/lramon2001/CarrinhoDeCompras/commits/view) for details.
 
-> **Consulte [Mudanças de commit] para obter detalhes.**
+> **Consulte [Mudanças de commit](https://github.com/lramon2001/CarrinhoDeCompras/commits/view) para obter detalhes.**
 
 ## License / Licença
 [MIT License](https://github.com/lramon2001/PrimeiroProjetoJava/blob/master/LICENSE) © [lramon](https://github.com/lramon2001)
