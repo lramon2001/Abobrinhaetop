@@ -28,10 +28,10 @@
 
 
 ## Versioning / Versionamento
-- This project follows the [release] model for versioning.
+- This project follows the [release](https://github.com/lramon2001/CarrinhoDeCompras/releases/tag/Economizzev1.0) model for versioning.
 
 
-> **Esse projeto segue o modelo de [release] para versionamento.**
+> **Esse projeto segue o modelo de [release](https://github.com/lramon2001/CarrinhoDeCompras/releases/tag/Economizzev1.0) para versionamento.**
 
 ## History / História
 - See [Commit changes] for details.
